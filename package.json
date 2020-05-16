@@ -1,0 +1,31 @@
+{
+  "name": "event-management",
+  "version": "1.0.0",
+  "description": "An Single Page Application in MERN Stack Event Management.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreenNinjaCoders/Event-Management.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GreenNinjaCoders/Event-Management/issues"
+  },
+  "homepage": "https://github.com/GreenNinjaCoders/Event-Management#readme",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "moment": "^2.25.3",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "randomstring": "^1.1.5",
+    "underscore": "^1.10.2"
+  }
+}
