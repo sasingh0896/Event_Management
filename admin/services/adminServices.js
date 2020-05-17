@@ -1,4 +1,4 @@
-import dbhandle from '../../database/dbhandler';
+const dbhandle = require('../../database/dbhandler')
 
 exports.adminLogin = adminLogin;
 exports.getTotalRegistrationType = getTotalRegistrationType;
@@ -8,7 +8,7 @@ exports.allRegistrationNo = allRegistrationNo;
     return new Promise(async (resolve, reject) => {
         {
             let query = " SELECT * FROM admin WHERE adminEmail = ? ";
-            await dbhandle.mysqlQueryPromise(apiReference, "loginCredintials", query, opts)
+            await dbhandle.mysqlQueryPromise("apiReference", "loginCredintials", query, opts)
                 .then((result) => {
                         resolve(result)   
                     },
@@ -19,8 +19,8 @@ exports.allRegistrationNo = allRegistrationNo;
  function getTotalRegistrationType(){
     return new Promise(async (resolve, reject) => {
         {
-            let query = "SELECT registrationType, SUM(noOfTickets) FROM `user_details` GROUP By registrationType ";
-            await dbhandle.mysqlQueryPromise(apiReference, "loginCredintials", query, opts)
+            let query = "SELECT registrationType, SUM(noOfTickets) as noOfTickets FROM `user_details` GROUP By registrationType ";
+            await dbhandle.mysqlQueryPromise(" ","loginCredintials", query )
                 .then((result) => {
                         resolve(result)
                         
@@ -34,7 +34,7 @@ function allRegistrationNo(){
     return new Promise(async (resolve, reject) => {
         {
             let query = "SELECT userName, registrationId, creation_datetime FROM `user_details` GROUP BY creation_datetime ";
-            await dbhandle.mysqlQueryPromise(apiReference, "loginCredintials", query, opts)
+            await dbhandle.mysqlQueryPromise("apiReference", "loginCredintials", query)
                 .then((result) => {
                         resolve(result)
                         

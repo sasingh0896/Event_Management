@@ -14,6 +14,7 @@ startUpServices.initializeServer();
 app.set("port", envproperties.port)
 
 require('./userRegistration')
+require('./admin')
 
 
 
